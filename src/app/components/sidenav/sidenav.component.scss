@@ -1,0 +1,28 @@
+/*VARIABLES*/
+$primary-color: #88E0EF;
+$secondary-color: #161E54;
+$tertiary-color: #FF5151;
+$extra-color: #FF9B6A;
+
+mat-toolbar{
+  background-color: $primary-color;
+  height: 60px;
+}
+
+mat-icon{
+  margin-left: 78rem;
+}
+
+button{
+  background-color: $primary-color;
+}
+
+.mat-button{
+  margin-left: 50px;
+}
+
+.container{
+  height: 20px;
+  width: 100%;
+  background-color: $secondary-color;
+}

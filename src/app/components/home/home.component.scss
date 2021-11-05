@@ -1,0 +1,182 @@
+/*VARIABLES*/
+$primary-color: #88E0EF;
+$secondary-color: #161E54;
+$tertiary-color: #FF5151;
+$extra-color: #FF9B6A;
+$Danger: #FF0B0B;
+$Warning: #FF640B;
+$Successful: #0B25FF;
+
+/*MIXIN*/
+@mixin border($border-radius: 70px,$hover:$secondary-color) {
+  border-radius: $border-radius;
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+/*loops*/
+@mixin condicional($color) {
+  background-color: ($color);
+  @if $color == $extra-color {
+    &:hover {
+      background-color: #88E0EF;
+    }
+  }
+}
+
+@each $icons in graduates, logoTutoSearch, professor, sass {
+  li.#{$icons} {
+    background-color: #161E54;
+    height: 150px;
+    width: 150px;
+    margin: 2px;
+    text-indent: -999999px;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .cajas__caja#{$i} {
+    background-color: $primary-color;
+    height: 50px;
+    width: 50px * $i;
+    margin: 2px;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
+
+$var: 1;
+@while $var <= 10 {
+  .selectors__selector#{$var} {
+    width: 20px * $var;
+    height: 8px * $var;
+    background: darken($Danger, $var);
+    margin: 2px;
+    &:hover {
+      opacity: .5;
+    }
+  }
+  $var: $var + 1;
+}
+
+/*final loops*/
+
+.cards {
+  position: relative;
+}
+
+/*mixin con condicional*/
+.card__example-card {
+  @include condicional($extra-color);
+  max-width: 400px;
+  margin-left: 50rem;
+  position: relative;
+}
+
+.card__example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.cardBorder {
+  @include border;
+  position: relative;
+  margin-left: 10rem;
+  background-color: $primary-color;
+  width: 250px;
+  height: 250px;
+  margin-top: -35rem;
+}
+
+.cardBorderDos {
+  @include border;
+  position: relative;
+  margin-left: 10rem;
+  background-color: $extra-color;
+  width: 250px;
+  height: 250px;
+
+}
+
+
+.cardBorder__exampleImg {
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 30%;
+}
+
+
+.title {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.title__title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+.ft {
+  width: 100%;
+  margin-top: 130px;
+  height: 150px;
+  background-color: gray;
+  text-align: center;
+  position: relative;
+}
+
+.cajas {
+  margin-top: -37rem;
+  margin-left: 15rem;
+  position: absolute;
+}
+
+.selectors {
+  margin-top: -37rem;
+  margin-left: 35rem;
+  position: absolute;
+}
+
+/*ESTILOS DE ALERTA*/
+.alertas {
+  text-align: center;
+}
+
+.alertas__succes,
+%alertas__succes {
+  @include border;
+  padding: 15px;
+  font-size: 1.2rem;
+  margin-left: 30%;
+  width: 500px;
+  border: 3px solid $Successful;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.alertas__warning {
+  @extend .alertas__succes;
+  border: 3px solid $Warning;
+}
+
+.alertas__danger {
+  @extend .alertas__warning;
+  border: 3px solid $Danger;
+}
+
+
+
+
+
+
+
+
+
