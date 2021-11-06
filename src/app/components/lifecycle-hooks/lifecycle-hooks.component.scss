@@ -1,0 +1,42 @@
+.onChanges{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.onInit{
+  margin-top: 30px;
+  margin-left: 37%;
+}
+
+
+.onInit__example-card {
+  max-width: 400px;
+}
+
+.onInit__example-header-image {
+  background-color: #161E54;
+  background-size: cover;
+}
+
+.onInit__title{
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+.onInit__example-card{
+  background-color: #96a2e7;
+}
+
+.DoCheck__button{
+  background-color: #4e5786;
+  color: white;
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.varios__cuadro{
+  width: 140px;
+  height: 200px;
+  border-radius: 50%;
+}
+

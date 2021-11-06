@@ -6,6 +6,7 @@ $Danger: #FF0B0B;
 $Warning: #FF640B;
 $Successful: #0B25FF;
 $font-weights: ("regular": 400, "medium": 500, "bold": 700);
+$tamaños: 500px, 150px, 150px;
 /*to do: faltantes list, selector, meta*/
 
 @use "sass:math";
@@ -13,8 +14,8 @@ $font-weights: ("regular": 400, "medium": 500, "bold": 700);
 @use "sass:color";
 @use "sass:list";
 @use "sass:map";
-@use "sass:selector";
-@use "sass:meta";
+@use "sass:selector";/*pendiente*/
+@use "sass:meta";/*pendiente*/
 
 /* Tamaño de fuente predeterminado en píxeles si no se reemplaza. */
 $baseFontSize: 16;
@@ -63,6 +64,12 @@ $baseFontSize: 16;
 
 .modulos__math {
   text-align: center;
+}
+
+/*sass:list*/
+.modulos__img{
+  width: list.nth($tamaños,2);
+  margin-left: 45%;
 }
 
 

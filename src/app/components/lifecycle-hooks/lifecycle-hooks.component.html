@@ -1,0 +1,44 @@
+<div class="onChanges">
+  <h1>OnChanges Example</h1>
+  <mat-form-field appearance="fill">
+    <mat-label>Marca de Autos</mat-label>
+    <mat-select (selectionChange)="marcaSelect = $event.value" [value]="marcaSelect">
+      <mat-option *ngFor="let marca of marcas" [value]="marca">
+        {{marca}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <app-lifecycle-hooks-hijo [marca]="marcaSelect"></app-lifecycle-hooks-hijo>
+</div>
+
+<div class="onInit">
+  <div class="onInit__cards">
+    <mat-card class="onInit__example-card">
+      <mat-card-header class="onInit__header">
+        <div class="onInit__example-header-image" mat-card-avatar></div>
+        <mat-card-title>Equipo Frontend</mat-card-title>
+        <mat-card-subtitle>is4tech Example OnInit</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="onInit__content">
+        <p class="onInit__p"> Nombres de Equipo : {{user}}</p>
+      </mat-card-content>
+      <div class="DoCheck">
+        <button (click)="cambiartext()" class="DoCheck__button" mat-button>
+          <p>{{text}}</p>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+  <br>
+  <div class="varios"><!--ngAfterContentInit / ngAfterContentChecked / ngAfterViewInit-->
+    <h1>ngAfterContentInit Example</h1>
+    <app-app-b>
+      <h2>ngAfterContentChecked / ngAfterContentInit</h2>
+      <div #BHeader class="varios__cuadro">
+      </div>
+      <app-app-c></app-app-c>
+    </app-app-b>
+  </div>
+
+</div>

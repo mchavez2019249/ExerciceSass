@@ -18,6 +18,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
+import { LifecycleHooksComponent } from './components/lifecycle-hooks/lifecycle-hooks.component';
+import {MatSelectModule} from '@angular/material/select';
+import { LifecycleHooksHijoComponent } from './components/lifecycle-hooks-hijo/lifecycle-hooks-hijo.component';
+import { AppBComponent } from './components/app-b/app-b.component';
+import { AppCComponent } from './components/app-c/app-c.component';
 
 
 @NgModule({
@@ -27,7 +32,11 @@ import {MatDialogModule} from "@angular/material/dialog";
     NotFoundComponent,
     SidenavComponent,
     ModulosExampleComponent,
-    FormDialogComponent
+    FormDialogComponent,
+    LifecycleHooksComponent,
+    LifecycleHooksHijoComponent,
+    AppBComponent,
+    AppCComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +53,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
