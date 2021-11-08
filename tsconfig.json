@@ -12,6 +12,10 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "lib-uno": [
+        "dist/lib-uno/lib-uno",
+        "dist/lib-uno"
+      ],
       "my-lib": [
         "dist/my-lib/my-lib",
         "dist/my-lib"

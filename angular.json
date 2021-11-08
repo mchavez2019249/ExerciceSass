@@ -138,6 +138,37 @@
           }
         }
       }
+    },
+    "libUno": {
+      "projectType": "library",
+      "root": "projects/lib-uno",
+      "sourceRoot": "projects/lib-uno/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lib-uno/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-uno/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lib-uno/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib-uno/src/test.ts",
+            "tsConfig": "projects/lib-uno/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-uno/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ExerciseSass"
