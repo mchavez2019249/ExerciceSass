@@ -16,6 +16,10 @@
         "dist/lib-uno/lib-uno",
         "dist/lib-uno"
       ],
+      "meta-tags": [
+        "dist/meta-tags/meta-tags",
+        "dist/meta-tags"
+      ],
       "my-lib": [
         "dist/my-lib/my-lib",
         "dist/my-lib"

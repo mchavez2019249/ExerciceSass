@@ -169,6 +169,37 @@
           }
         }
       }
+    },
+    "meta-tags": {
+      "projectType": "library",
+      "root": "projects/meta-tags",
+      "sourceRoot": "projects/meta-tags/src",
+      "prefix": "mt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/meta-tags/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/meta-tags/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/meta-tags/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/meta-tags/src/test.ts",
+            "tsConfig": "projects/meta-tags/tsconfig.spec.json",
+            "karmaConfig": "projects/meta-tags/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ExerciseSass"

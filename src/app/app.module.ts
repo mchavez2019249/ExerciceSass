@@ -23,6 +23,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { LifecycleHooksHijoComponent } from './components/lifecycle-hooks-hijo/lifecycle-hooks-hijo.component';
 import { AppBComponent } from './components/app-b/app-b.component';
 import { AppCComponent } from './components/app-c/app-c.component';
+import {MetaTagsModule} from "../../projects/meta-tags/src/lib/meta-tags.module";
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { AppCComponent } from './components/app-c/app-c.component';
     FormsModule,
     MatDialogModule,
     MatSelectModule,
+    MetaTagsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
