@@ -10,6 +10,7 @@ $Successful: #0B25FF;
 /*MIXIN*/
 @mixin border($border-radius: 70px,$hover:$secondary-color) {
   border-radius: $border-radius;
+  transition: background-color .5s;
   &:hover {
     background-color: $hover;
   }

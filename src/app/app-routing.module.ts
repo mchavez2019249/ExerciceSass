@@ -4,6 +4,7 @@ import {HomeComponent} from "./components/home/home.component";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
 import {ModulosExampleComponent} from "./components/modulos-example/modulos-example.component";
 import {LifecycleHooksComponent} from "./components/lifecycle-hooks/lifecycle-hooks.component";
+import {AMaterialComponent} from "./components/a-material/a-material.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'modulos', component: ModulosExampleComponent},
   {path: 'lifecycle', component: LifecycleHooksComponent},
+  {path: 'material', component: AMaterialComponent},
   {path: '**', component: NotFoundComponent},
 
 ];

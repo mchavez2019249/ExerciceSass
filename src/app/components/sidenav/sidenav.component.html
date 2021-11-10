@@ -1,14 +1,30 @@
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Didact+Gothic&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@600&family=Didact+Gothic&display=swap');
 </style>
-<mat-toolbar>
-  <button mat-icon-button>
-    <img height="40px" src="assets/img/sass.png" width="40px">
-    <mat-icon href="/home">home</mat-icon>
-  </button>
-  <a class="mat-button" href="/home">Home</a>
-  <a class="mat-button" href="/modulos">modulos Sass</a>
-  <a class="mat-button" href="/lifecycle">lifecycle</a>
-</mat-toolbar>
+<div class="navbar">
+  <mat-toolbar class="navbar__toolbar">
+    <img  class="navbar__img" height="40px" src="assets/img/sass.png" width="40px">
+    <button [matMenuTriggerFor]="menu" class="navbar__button" mat-icon-button  matTooltip="more options">
+        <mat-icon matBadge="15" matBadgeColor="warn">person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>close</mat-icon>
+        <span>Sign out</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+    <a class="navbar__mat-button"  mat-button href="/home">Home</a>
+    <a class="navbar__mat-button"  mat-button href="/modulos">modulos Sass</a>
+    <a class="navbar__mat-button"  mat-button href="/lifecycle">lifecycle</a>
+    <a class="navbar__mat-button"  mat-button href="/material">Angular Material</a>
+  </mat-toolbar>
+</div>
 <div class="container"></div>
-

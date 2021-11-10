@@ -1,0 +1,320 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@600&family=Didact+Gothic&family=Mohave&display=swap');
+</style>
+<body>
+<div class='container'>
+  <div class='line-text'>Angular Material</div>
+</div>
+<div class="text">
+  <p class="text__p">Angular Material, como su nombre indica, es una librería de componentes web con un diseño
+    Material
+    design, una guía
+    de estilo creada por Google para Android y para sus aplicaciones. En los últimos tiempos se ha puesto muy de moda
+    el
+    estilo material design, y han salido un montón de librerías y frameworks que lo implementan, entre ellas Angular
+    Material. <span matBadge="1" matBadgeSize="large"></span></p>
+</div>
+<div class="examples">
+  <div class="card">
+    <mat-card class="card__example-card">
+      <mat-card-header>
+        <div class="card__example-header-image" mat-card-avatar></div>
+        <mat-card-title class="card__mat-card-title">Angular</mat-card-title>
+        <mat-card-subtitle>Example Card</mat-card-subtitle>
+      </mat-card-header>
+      <img alt="angularIcon" mat-card-image src="/assets/img/angular.png">
+      <mat-card-content>
+        <p class="card__p">
+          Angular es un framework de desarrollo para JavaScript creado por Google. La finalidad de Angular es
+          facilitarnos
+          el desarrollo de aplicaciones web SPA y además darnos herramientas para trabajar con los elementos de una web
+          de
+          una manera más sencilla y optima.
+
+          Otro propósito que tiene Angular es la separación completa entre el front-end y el back-end en una aplicación
+          web.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="toggleBadgeVisibility()" [matBadgeHidden]="hidden" color="warn" mat-raised-button matBadge="7">
+          Hide
+        </button>
+        <button (click)="openDialog()" color="primary" mat-raised-button matBadge="8" matBadgeColor="accent"
+                matBadgePosition="above after"
+                matTooltip="open form dialog">
+          Dialog
+        </button>
+        <button (click)="openBottomSheet()" color="accent" mat-raised-button>Open file</button>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  <div class="example-dos">
+    <form class="example-form">
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Number</mat-label>
+        <input [formControl]="myControl" [matAutocomplete]="auto"
+               aria-label="Number"
+               matInput
+               placeholder="Pick one"
+               type="text">
+        <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <br>
+      <mat-slide-toggle
+        (change)="myControl.disabled ? myControl.enable() : myControl.disable()"
+        [checked]="myControl.disabled">
+        Disable Input?
+      </mat-slide-toggle>
+      <button aria-label="Example icon button with a menu icon" color="primary" mat-mini-fab>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </form>
+  </div>
+  <div class="example-tres">
+    <mat-button-toggle-group #group="matButtonToggleGroup" class="example-tres__toggle">
+      <mat-button-toggle aria-label="Text align left" value="left">
+        <mat-icon>format_align_left</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle aria-label="Text align center" value="center">
+        <mat-icon>format_align_center</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle aria-label="Text align right" value="right">
+        <mat-icon>format_align_right</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle aria-label="Text align justify" disabled value="justify">
+        <mat-icon>format_align_justify</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <div class="example-selected-value">Selected value: {{group.value}}</div>
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="example-cuatro">
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Checkbox configuration</h2>
+
+        <section class="example-section">
+          <mat-checkbox [(ngModel)]="checked" class="example-margin">Checked</mat-checkbox>
+          <mat-checkbox [(ngModel)]="indeterminate" class="example-margin">Indeterminate</mat-checkbox>
+        </section>
+
+        <section class="example-section">
+          <label class="example-margin">Align:</label>
+          <mat-radio-group [(ngModel)]="labelPosition">
+            <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
+            <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <section class="example-section">
+          <mat-checkbox [(ngModel)]="disabled" class="example-margin">Disabled</mat-checkbox>
+        </section>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="result">
+      <mat-card-content>
+        <h2 class="example-h2">Result</h2>
+
+        <section class="example-section">
+          <mat-checkbox
+            [(indeterminate)]="indeterminate"
+            [(ngModel)]="checked"
+            [disabled]="disabled"
+            [labelPosition]="labelPosition"
+            class="example-margin">
+            I'm a checkbox
+          </mat-checkbox>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="example-cinco">
+    <mat-form-field appearance="fill" class="example-chip-list">
+      <mat-label>Video keywords</mat-label>
+      <mat-chip-list #chipList [formControl]="formControl" aria-label="Video keywords" multiple>
+        <mat-chip
+          (removed)="removeKeyword(keyword)"
+          *ngFor="let keyword of keywords"
+          [selected]="keyword"
+          [value]="keyword">
+          {{keyword}}
+        </mat-chip>
+        <input
+          (matChipInputTokenEnd)="addKeywordFromInput($event)"
+          [matChipInputFor]="chipList"
+          placeholder="New keyword...">
+      </mat-chip-list>
+    </mat-form-field>
+    <mat-card-actions>
+      <button (click)="formControl.enable()" color="primary" mat-raised-button>Enable</button>
+      <button (click)="formControl.disable()" color="warn" mat-raised-button>Disable</button>
+    </mat-card-actions>
+  </div>
+
+  <div class="example-seis">
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Choose a date</mat-label>
+      <input [matDatepicker]="picker" matInput>
+      <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #picker touchUi></mat-datepicker>
+    </mat-form-field>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="example-siete">
+    <mat-list>
+      <mat-list-item>Item 1</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Item 2</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Item 3</mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="example-ocho">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Personal data
+          </mat-panel-title>
+          <mat-panel-description>
+            Type your name and age
+            <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field appearance="fill">
+          <mat-label>First name</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Age</mat-label>
+          <input matInput min="1" type="number">
+        </mat-form-field>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </div>
+
+  <div class="example-nueve">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile class="grid-uno">
+        <mat-list>
+          <div mat-subheader>Folders</div>
+          <mat-list-item *ngFor="let folder of folders">
+            <mat-icon mat-list-icon>folder</mat-icon>
+            <div mat-line>{{folder.name}}</div>
+            <div mat-line> {{folder.updated | date}} </div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <div mat-subheader>Notes</div>
+          <mat-list-item *ngFor="let note of notes">
+            <mat-icon mat-list-icon>note</mat-icon>
+            <div mat-line>{{note.name}}</div>
+            <div mat-line> {{note.updated | date}} </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-grid-tile>
+      <mat-grid-tile class="grid-uno">
+        <div [matRippleColor]="myColor" [matRippleRadius]="radius" matRipple>
+          <h1>Title Example</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt quam condimentum lacus auctor
+            sodales. Fusce et eros vitae sapien lacinia interdum non vel eros. Fusce placerat sem et turpis eleifend
+            maximus. Nulla vitae massa tortor. Aliquam rhoncus tortor lorem, nec pharetra nisi dictum quis. Sed ut
+            lectus sed felis blandit vestibulum. Ut convallis malesuada vulputate. Nullam vel cursus ex. Vivamus vitae
+            vehicula tortor. Vestibulum interdum ante eget nisl interdum fringilla. Fusce augue leo, cursus at lorem a,
+            faucibus tincidunt risus. Nam vel ligula at purus sollicitudin convallis vitae eu ante.
+          </p>
+          <mat-slider aria-label="unit(s)"></mat-slider>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile class="grid-uno">
+        <mat-stepper #stepper [linear]="isLinear">
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Fill out your name</ng-template>
+              <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input formControlName="firstCtrl" matInput placeholder="Last name, First name" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+            <form [formGroup]="secondFormGroup">
+              <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input formControlName="secondCtrl" matInput placeholder="Ex. 1 Main St, New York, NY"
+                       required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button (click)="stepper.reset()" mat-button>Reset</button>
+            </div>
+          </mat-step>
+        </mat-stepper>
+
+      </mat-grid-tile>
+      <mat-grid-tile class="grid-uno">
+        <mat-tab-group>
+          <mat-tab label="First"> Content 1</mat-tab>
+          <mat-tab label="Second"> Content 2</mat-tab>
+          <mat-tab label="Third"> Content 3</mat-tab>
+        </mat-tab-group>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div class="table">
+    <table mat-table [dataSource]="personas" class="mat-elevation-z8 demo-table">
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>name</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef>age</th>
+        <td mat-cell *matCellDef="let element">{{element.age}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef>Symbol</th>
+        <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+ </div>
+</body>
+

@@ -1,0 +1,205 @@
+/*VARIABLES*/
+$primary-color: #88E0EF;
+$secondary-color: #161E54;
+$tertiary-color: #FF5151;
+$extra-color: #FF9B6A;
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Molle:ital@1&display=swap');
+
+
+
+.text{
+  height: 100px;
+  width: 50%;
+  margin-top: 40px;
+  text-align: center;
+  margin-left: 25%;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 15px;
+}
+
+
+.card{
+
+}
+
+.card__example-card {
+  max-width: 400px;
+  margin-left: 30px;
+  margin-top: 50px;
+  background-color: $primary-color;
+}
+
+.card__example-header-image {
+  background-image: url("/assets/img/angularIcon.png");
+  background-size: cover;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-dos{
+  background-color: $primary-color;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  margin-top: -35rem;
+  margin-left: 30rem;
+  border-radius: 30px;
+}
+
+.example-form{
+  margin-top: 20px;
+}
+
+.example-tres{
+  height: 200px;
+  width: 200px;
+  background-color: $primary-color;
+  position: absolute;
+  margin-left: 55%;
+  margin-top: -41%;
+  border-radius: 30px;
+}
+
+.example-cuatro{
+  height: auto;
+  width: 200px;
+  margin-left: 75%;
+  margin-top: -41%;
+}
+
+.example-cinco{
+  height: auto;
+  width: 200px;
+  margin-left: 36%;
+  margin-top: -50px;
+  background-color: $primary-color;
+  border-radius: 30px;
+}
+
+.example-seis{
+  height: 200px;
+  width: 200px;
+  margin-left: 55%;
+  margin-top: -220px;
+  background-color: $primary-color;
+  border-radius: 30px;
+}
+
+.example-siete{
+  background-color: $primary-color;
+  height: auto;
+  width: 200px;
+  margin-left: 75%;
+}
+
+.example-ocho{
+  height: auto;
+  width: 500px;
+  margin-left: 35%;
+  margin-top: -5rem;
+}
+
+.example-nueve{
+  margin-top: 15px;
+}
+
+.table{
+  margin-left: 35%;
+}
+
+mat-slider {
+  width: 500px;
+}
+
+mat-spinner{
+  position: absolute;
+  margin-left: 5px;
+}
+
+.grid-uno{
+  transition: background-color .5s;
+  &:hover{
+    background-color: $primary-color;
+  }
+}
+mat-expansion-panel{
+  background-color: $primary-color;
+}
+
+mat-card{
+  background-color: #88E0EF;
+  border-radius: 30px;
+}
+
+.result{
+  margin-top: 5px;
+}
+
+.example-tres__toggle{
+  margin-top: 10px;
+  border-radius: 30px;
+}
+
+
+// Size
+$extra-large: 110px;
+$large: 84px;
+
+
+.container {
+  text-align: center;
+
+  // Style 1, line text
+  .line-text {
+    $random-text: 'foreign terrace';
+    $stroke-width: $extra-large * 0.05;
+    position: relative;
+    display: inline-block;
+    font-size: $extra-large;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke-width: $stroke-width;
+    white-space: nowrap;
+    margin-top: 60px;
+    $x: 12px;
+    $y: 15px;
+    $step: 1px;
+
+    text-shadow: $x $y $secondary-color,
+    $x + $step $y + $step $primary-color,
+    $x + $step * 2 $y + $step * 2 $primary-color,
+    $x + $step * 3 $y + $step * 3 $primary-color,
+    $x + $step * 4 $y + $step * 4 $primary-color,
+    $x + $step * 5 $y + $step * 5 $primary-color,
+    $x + $step * 6 $y + $step * 6 $primary-color,
+    $x + $step * 7 $y + $step * 7 $primary-color,
+    $x + $step * 8 $y + $step * 8 $primary-color,
+    $x + $step * 9 $y + $step * 9 $primary-color,
+    $x + $step * 10 $y + $step * 10 $primary-color,
+    $x + $step * 11 $y + $step * 11 $primary-color,
+    $x + $step * 12 $y + $step * 12 $primary-color,
+    $x + $step * 13 $y + $step * 13 $primary-color,
+
+  }
+
+
+  .example-selected-value {
+    margin: 15px 0;
+  }
+
+}
+
+
+
+
+
+

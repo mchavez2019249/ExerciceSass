@@ -4,21 +4,22 @@ $secondary-color: #161E54;
 $tertiary-color: #FF5151;
 $extra-color: #FF9B6A;
 
-mat-toolbar{
+.navbar__toolbar{
   background-color: $primary-color;
   height: 60px;
+  position: relative;
 }
 
-mat-icon{
-  margin-left: 78rem;
-}
-
-button{
+.navbar__button{
   background-color: $primary-color;
+  margin-left: 93%;
+  position: absolute;
 }
 
-.mat-button{
+.navbar__mat-button{
   margin-left: 50px;
+  font-family: 'Didact Gothic', sans-rif;
+  font-size: 15px;
 }
 
 .container{

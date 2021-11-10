@@ -1,25 +1,33 @@
-<!--<div class="form">
+<div class="dialog" mat-dialog-content>
+  <p>Example Form</p>
   <mat-form-field appearance="fill">
-    <mat-label>Input</mat-label>
-    <input matInput>
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-label>username</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>how_to_reg</mat-icon>
+  </mat-form-field>
+  <br>
+  <!--email-->
+  <mat-form-field appearance="fill">
     <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+    <input [formControl]="email" matInput placeholder="pat@example.com" required>
+    <mat-icon matSuffix>mail</mat-icon>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
-</div>-->
-<h1 mat-dialog-title>Hi {{data.nombre}}</h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+  <br>
+  <!--password-->
+
   <mat-form-field appearance="fill">
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput [(ngModel)]="data.correo">
+    <mat-label>Enter your password</mat-label>
+    <input [formControl]="password" [type]="hide ? 'password' : 'text'" matInput required>
+    <mat-error *ngIf="password.invalid">{{getErrorPassword()}}</mat-error>
+    <button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" mat-icon-button
+            matSuffix>
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
   </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.correo" cdkFocusInitial>Ok</button>
+
+  <div mat-dialog-actions>
+    <button (click)="onNoClick()" color="primary" mat-button>cancel</button>
+    <button [mat-dialog-close]="true" cdkFocusInitial color="accent" mat-button (click)="openSnackBar()">save</button>
+  </div>
 </div>
